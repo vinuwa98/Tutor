@@ -1,12 +1,16 @@
-function test1 (fnumber , snumber) {
-    var z = fnumber + snumber;
-    console.log("first Number is "+ fnumber + " Second Number is "+ snumber + " Sum is " + z); 
-    return z;
+let student = {
+    name: "John Doe",
+    age: 20,
+    major: "Computer Science",
+
+    sayHi: function() {
+        console.log("Hello, my name is " + this.name);
+    },
+    sayAge: function() {
+        console.log("I am " + this.age + " years old.");
+    },
 }
 
-let out = test1(34, 56);
-console.log(out);
+student.sayHi(); // Output: Hello, my name is John Doe
+student.sayAge(); // Output: I am 20 years old.
 
-test1(45, 78);
-test1(65, 34);
-test1(23, 89);
