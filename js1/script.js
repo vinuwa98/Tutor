@@ -10,7 +10,5 @@ let student = {
         console.log("I am " + this.age + " years old.");
     },
 }
-
-student.sayHi(); // Output: Hello, my name is John Doe
-student.sayAge(); // Output: I am 20 years old.
-
+student.sayHi();
+student.sayAge();
