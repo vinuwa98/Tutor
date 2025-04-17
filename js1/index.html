@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+
 </head>
 <body>
+    
+    <label for "title">Title</label>
+    <input type="text" id="title" value="Title" />
 
+    <br>
+    <br>
+
+    <label for "paragraph">Paragraph</label>
+    <input type="text" class="paragraph" value="Paragraph" />   
+        
+    <br>
+    <br>
+
+    <button onclick="compare()">compare</button>
+
+    <br>
+    <br>
+
+    <div id="result"></div>
+
+    <script>
+        function compare() {
+            let val1 = document.getElementById("title").value;
+            let val2 = document.querySelector(".paragraph").value;
+            console.log(val1, val2);
+
+            if (val1 == val2) {
+                document.getElementById("result").innerHTML = "The values are equal.";
+            } else {
+                document.getElementById("result").innerHTML = "The values are not equal.";
+            }
+        }
+    </script>
 </body>
 </html>
