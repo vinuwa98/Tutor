@@ -59,6 +59,9 @@
     <h1 id="resultsShow"> </h1>
     <br>
     <div id="resultsShowDiv"></div>
+
+    <ul id="list">Loop</ul>
+        <li>for</li>
     <script>
         function calculate() {
             // Get name
@@ -106,6 +109,15 @@
                 "Subject 2 Grade: " + getGrade(sub2) + "<br>" +
                 "Subject 3 Grade: " + getGrade(sub3);
         }
+
+    
+            let list = document.getElementById("list");
+            for (let i = 0 ; i < 10; i++){
+                let li = document.createElement("li");
+                li.innerHTML = "Item " + (i + 1);
+                list.appendChild(li);
+            }
+        
     </script>
     
 </body>
