@@ -9,37 +9,104 @@
 </head>
 <body>
     
-    <label for "title">Title</label>
-    <input type="text" id="title" value="Title" />
+    <h1 style="text-align: center;"> Exam Results Test System </h1>
 
+    <label>Enter Your Fist Name: </label>
+    <input type="text" id="fname" placeholder="Enter your first name" required>
     <br>
     <br>
-
-    <label for "paragraph">Paragraph</label>
-    <input type="text" class="paragraph" value="Paragraph" />   
-        
+    <label>Enter Your Last Name: </label>
+    <input type="text" id="lname" placeholder="Enter your last name" required>
     <br>
     <br>
-
-    <button onclick="compare()">compare</button>
-
+    <label>What is your A/L Stream? </label>
+    <select id="options" name="options">
+        <option value="Biology">Biology</option>
+        <option value="Maths">Maths</option>
+        <option value="Commerce">Commerce</option>
+        <option value="Art">Art</option>
+        <option value="Tech">Tech</option>
+    </select>  
     <br>
     <br>
-
-    <div id="result"></div>
-
+    <label>Enter Your Index Number: </label>
+    <input type="number" id="index" placeholder="Enter your index number" required>
+    <br>
+    <br>
+    <label>Enter your First Subject Marks: </label>
+    <input type="number" id="sub1" placeholder="Enter your first subject marks" required>
+    <br>  
+    <br>
+    <label>Enter your Second Subject Marks: </label>
+    <input type="number" id="sub2" placeholder="Enter your second subject marks" required>  
+    <br>
+    <br>
+    <label>Enter your Third Subject Marks: </label>
+    <input type="number" id="sub3" placeholder="Enter your third subject marks" required>
+    <br>
+    <br>
+    <button id="btn" onclick="calculate()">Calculate</button>
+    <br>
+    <br>
+    <div id = "fullname"></div>
+    <br>
+    <div id="shownIndex"></div>
+    <br>
+    <div id="shownStream"></div>    
+    <br>
+    <div id="shownStream"></div>    
+    <br>
+    <h1 id="resultsShow"> </h1>
+    <br>
+    <div id="resultsShowDiv"></div>
     <script>
-        function compare() {
-            let val1 = document.getElementById("title").value;
-            let val2 = document.querySelector(".paragraph").value;
-            console.log(val1, val2);
-
-            if (val1 == val2) {
-                document.getElementById("result").innerHTML = "The values are equal.";
-            } else {
-                document.getElementById("result").innerHTML = "The values are not equal.";
+        function calculate() {
+            // Get name
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let fullname = fname + " " + lname;
+    
+            // Show full name
+            document.getElementById("fullname").innerHTML = "Your Full Name is: " + fullname;
+    
+            // Get and show index number
+            let index = document.getElementById("index").value;
+            document.getElementById("shownIndex").innerHTML = "Your Index Number is: " + index;
+    
+            // Get and show stream
+            let stream = document.getElementById("options").value;
+            document.getElementById("shownStream").innerHTML = "Your A/L Stream is: " + stream;
+    
+            // Get subject marks
+            let sub1 = parseInt(document.getElementById("sub1").value);
+            let sub2 = parseInt(document.getElementById("sub2").value);
+            let sub3 = parseInt(document.getElementById("sub3").value);
+    
+            // Check if all fields are filled
+            if (fname == "" || lname == "" || index == "" || stream == "" ||
+                isNaN(sub1) || isNaN(sub2) || isNaN(sub3)) {
+                alert("Please fill all the fields.");
+                return;
             }
+    
+            // Display header
+            document.getElementById("resultsShow").innerHTML = "Your Results are: ";
+    
+            // Function to calculate grade
+            function getGrade(mark) {
+                if (mark < 35) return "F";
+                else if (mark < 50) return "C";
+                else if (mark < 75) return "B";
+                else return "A";
+            }
+    
+            // Display results
+            document.getElementById("resultsShowDiv").innerHTML =
+                "Subject 1 Grade: " + getGrade(sub1) + "<br>" +
+                "Subject 2 Grade: " + getGrade(sub2) + "<br>" +
+                "Subject 3 Grade: " + getGrade(sub3);
         }
     </script>
+    
 </body>
 </html>
