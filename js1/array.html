@@ -6,38 +6,27 @@
     <title>Fruit Array</title>
 </head>
 <body>
-    <h1 style="text-align: center;"> Fruit Array Example </h1>
-
-    <label>Add Your Fruits: </label>
-    <input type="text" id="fruitInput" placeholder="Enter a fruit name" required>
-
-    <button onclick="addFBtn()" >Add Fruit</button>
-    <button onclick="removeLast()">Remove Last Fruit</button>
-    <button onclick="printAll()">Print All Fruit</button>
-
-    <div id="fruitList"></div>
-    <br>
+    <h1 style="text-align: center;">
+        Object
+    </h1>
     <script>
-        let fruits = [];
-
-        function addFBtn(){
-            let fruInput = document.getElementById("fruitInput").value;
-            fruits.push(fruInput);
-            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join("<br>");
+        let person = {
+            fName: "kaumini",
+            lName: "Sathya",
+            age: 20,
         }
 
-        function removeLast(){
-            fruits.pop();
-            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join("<br>");
-        }
+        console.log(person.fName);
+        console.log(person.lName);  
+        console.log(person.age);
+        
 
-        function printAll(){
-            for (let i = 0; i < fruits.length; i++){
-                console.log(fruits[i]);
-            }
-            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join(",");
-        }
+        person.fName = "Nimna";
+        person.lName = "Sathya";
 
+        console.log(person.fName);
+        console.log(person.lName);  
+        console.log(person.age);
     </script>
 
 </body>
