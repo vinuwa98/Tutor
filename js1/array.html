@@ -7,25 +7,24 @@
 </head>
 <body>
 
-    <label>Enter Yoour Number: </label>
-    <input type="number" id="number" placeholder="Enter your number" required>
+    <label>Enter Your Second Number: </label>
+    <input type="number" id="firstNumber" placeholder="Enter your number" required>
+    <label>Enter Your Second Number: </label>
+    <input type="number" id="secondNumber" placeholder="Enter your number" required>
     <br>
     <button id="btn" onclick="checkNum()">Check</button>
     <br>
-    <div id="results"></div>
+    <div id="result"></div>
     <script>
         function checkNum(){
-            let num = document.getElementById("number").value;
 
-            if (num == ""){
-                alert("Please enter a number");
-                return;
-            }
+            let fnumber = document.getElementById("firstNumber").value;
+            let snumber = document.getElementById("secondNumber").value;
 
-            if (num % 2 == 0){
-                document.getElementById("results").innerHTML = num + "is an even number";
+            if (fnumber === snumber) {
+                document.getElementById("result").innerHTML = "✅ Both numbers are equal.";
             } else {
-                document.getElementById("results").innerHTML = num + "is an odd number";
+                document.getElementById("result").innerHTML = "❌ Both numbers are not equal.";
             }
         
         }
