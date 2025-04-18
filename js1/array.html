@@ -12,20 +12,32 @@
     <input type="text" id="fruitInput" placeholder="Enter a fruit name" required>
 
     <button onclick="addFBtn()" >Add Fruit</button>
+    <button onclick="removeLast()">Remove Last Fruit</button>
+    <button onclick="printAll()">Print All Fruit</button>
 
     <div id="fruitList"></div>
     <br>
     <script>
-        
-        let myArray = [];
-        
-        let fInput = document.getElementById("fruitInput");
-       
-        function addFBtn() {
-            let fruit = fInput.value;
-            myArray.push(fruit);
-            document.getElementById("fruitList").innerHTML = myArray.join("<br>");
+        let fruits = [];
+
+        function addFBtn(){
+            let fruInput = document.getElementById("fruitInput").value;
+            fruits.push(fruInput);
+            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join("<br>");
         }
+
+        function removeLast(){
+            fruits.pop();
+            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join("<br>");
+        }
+
+        function printAll(){
+            for (let i = 0; i < fruits.length; i++){
+                console.log(fruits[i]);
+            }
+            document.getElementById("fruitList").innerHTML = "Your Fruits are: " + fruits.join(",");
+        }
+
     </script>
 
 </body>
