@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Array</title>
+    <title>Even Odd Cheker</title>
 </head>
 <body>
+
+    <label>Enter Yoour Number: </label>
+    <input type="number" id="number" placeholder="Enter your number" required>
+    <br>
+    <button id="btn" onclick="checkNum()">Check</button>
+    <br>
+    <div id="results"></div>
     <script>
-        console.log("Vinod Warnakulasooriya");
+        function checkNum(){
+            let num = document.getElementById("number").value;
 
-        let x = 10;
-        let y = 20;
-        let z;
+            if (num == ""){
+                alert("Please enter a number");
+                return;
+            }
 
-        z= x + y;
-        console.log(z);
+            if (num % 2 == 0){
+                document.getElementById("results").innerHTML = num + "is an even number";
+            } else {
+                document.getElementById("results").innerHTML = num + "is an odd number";
+            }
+        
+        }
     </script>
 
 
