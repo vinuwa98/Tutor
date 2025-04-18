@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Even Odd Cheker</title>
+    <title>Fruit Array</title>
 </head>
 <body>
+    <h1 style="text-align: center;"> Fruit Array Example </h1>
 
-    <label>Enter Your Second Number: </label>
-    <input type="number" id="firstNumber" placeholder="Enter your number" required>
-    <label>Enter Your Second Number: </label>
-    <input type="number" id="secondNumber" placeholder="Enter your number" required>
+    <label>Add Your Fruits: </label>
+    <input type="text" id="fruitInput" placeholder="Enter a fruit name" required>
+
+    <button onclick="addFBtn()" >Add Fruit</button>
+
+    <div id="fruitList"></div>
     <br>
-    <button id="btn" onclick="checkNum()">Check</button>
-    <br>
-    <div id="result"></div>
     <script>
-        function checkNum(){
-
-            let fnumber = document.getElementById("firstNumber").value;
-            let snumber = document.getElementById("secondNumber").value;
-
-            if (fnumber === snumber) {
-                document.getElementById("result").innerHTML = "✅ Both numbers are equal.";
-            } else {
-                document.getElementById("result").innerHTML = "❌ Both numbers are not equal.";
-            }
         
+        let myArray = [];
+        
+        let fInput = document.getElementById("fruitInput");
+       
+        function addFBtn() {
+            let fruit = fInput.value;
+            myArray.push(fruit);
+            document.getElementById("fruitList").innerHTML = myArray.join("<br>");
         }
     </script>
-
 
 </body>
 </html>
