@@ -6,35 +6,17 @@
     <title>Add to Array</title>
 </head>
 <body>
-    <h1 style="text-align: center;">
-        Grocery List System
-    </h1>
-    <label>Enter Your Grocery Item: </label>
-    <input type = "text" id="groceryItem" placeholder="Enter your grocery item" required>
-    <br>
-    <br>
-    <button id="btn" onclick="addItem()">Add Item</button>
-    <h1 id="resultsShow"></h1>
-    <br>
-    <ul id="groceryList"></ul>
     <script>
-        let listArray = [];
+        console.log("Vinod Warnakulasooriya");
 
-        function addItem() {
-            let item = document.getElementById("groceryItem").value;
-            document.getElementById("resultsShow").innerHTML = "You have added " + item + " to your grocery list.";
-            listArray.push(item);
+        let x = 10;
+        let y = 20;
+        let z;
 
-            // Add item to the visible list
-            let list = document.getElementById("groceryList");
-            let listItem = document.createElement("li");
-            listItem.textContent = item;
-            list.appendChild(listItem);
-
-            // Clear the input
-            document.getElementById("groceryItem").value = "";
-        }
-
+        z= x + y;
+        console.log(z);
     </script>
+
+
 </body>
 </html>
