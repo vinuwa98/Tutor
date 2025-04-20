@@ -16,28 +16,35 @@ function addTask() {
         let deleteBtn = document.createElement("button");
         deleteBtn.innerText = "Delete";
         deleteBtn.style.marginLeft = "10px";
+        deleteBtn.style.marginTop = "10px";
         deleteBtn.style.backgroundColor = "red";
         deleteBtn.style.color = "white";
         deleteBtn.style.border = "none";
         deleteBtn.style.padding = "4px 8px";
         deleteBtn.style.cursor = "pointer";
-        deleteBtn.style.borderRadius = "4px";
+        deleteBtn.style.borderRadius = "10px";
 
         deleteBtn.onclick = function () {
+            // Remove the task from the UI
             li.remove();
-            myArray = myArray.filter(task => task !== addTaskInput);
-        };
+        
+            // Remove the task from the array using a regular function
+            myArray = myArray.filter(function(task) {
+                return task !== addTaskInput;
+            });
+        }
 
         // --- COMPLETE BUTTON ---
         let completeBtn = document.createElement("button");
         completeBtn.innerText = "Complete";
         completeBtn.style.marginLeft = "5px";
+        deleteBtn.style.marginTop = "10px";
         completeBtn.style.backgroundColor = "green";
         completeBtn.style.color = "white";
         completeBtn.style.border = "none";
         completeBtn.style.padding = "4px 8px";
         completeBtn.style.cursor = "pointer";
-        completeBtn.style.borderRadius = "4px";
+        completeBtn.style.borderRadius = "10px";
 
         completeBtn.onclick = function () {
             li.remove();
